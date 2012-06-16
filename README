@@ -1,0 +1,19 @@
+Es war: Ein Relaisboard mit 8 Relais, die jeweils für 250V 10A spezifiziert sind, mit einem ATTiny2313 drauf.
+Problem: wtfprotokoll? Der Hersteller wusste auch nichts mehr, da zu alt.
+Lösung: Eine neue Firmware oder Bruteforce. Das hier ist die Lösung der neuen Firmware.
+
+Protokoll aus dem Wiki:
+* 1 Byte Befehl "Relais Schalten": ''0x01''
+* 1 Byte Addresse: ''0x01''
+* 1 Byte Befehl
+* 1 Byte Parity: ''byte1 xor byte2 xor byte3'' (in unserem Fall ''== byte3'')
+
+Hardware:
+1x ATTiny 2313
+1x ULN2803L
+8x Finder 36.11.9.005.0000
+1x MAX232N
+1x IR-Empfänger
+nx Kleinkram
+
+Die Relais liegen an PB0-PB7, die Serielle Schnittstelle an PD0, PD1, der IR-Empfänger an PD2.

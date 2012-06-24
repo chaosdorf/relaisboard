@@ -3,9 +3,9 @@ Problem: wtfprotokoll? Der Hersteller wusste auch nichts mehr, da zu alt.
 Lösung: Eine neue Firmware oder Bruteforce. Das hier ist die Lösung der neuen Firmware.
 
 Protokoll aus dem Wiki:
-* 1 Byte Befehl "Relais Schalten": ''0x01''
-* 1 Byte Addresse: ''0x01''
-* 1 Byte Befehl
+* 1 Byte Kommando "Relais Schalten": ''0x00''
+* 1 Byte Addresse: ''0x00''
+* 1 Byte Kommandoparameter
 * 1 Byte Parity: ''byte1 xor byte2 xor byte3'' (in unserem Fall ''== byte3'')
 
 Hardware:
@@ -17,3 +17,4 @@ Hardware:
 nx Kleinkram
 
 Die Relais liegen an PB0-PB7, die Serielle Schnittstelle an PD0, PD1, der IR-Empfänger an PD2.
+Die serielle Schnittstelle arbeitet mit 9k6 Baud.

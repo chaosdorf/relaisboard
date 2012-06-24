@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-#define BAUD 115200UL      // Baudrate
+#define BAUD 9600UL      // Baudrate
 #include <util/setbaud.h>  // Das util setzt die Baudrate automatisch
 
 void _serputs(char *s){
@@ -22,5 +22,5 @@ void _usart_init(void){ //USART init
         UCSRA &= ~(1 << U2X);
     #endif
     UCSRB |= (1<<RXEN)|(1<<TXEN)|(1<<RXCIE);  //RX und TX enabled, Interrupt bei RX enabled
-    UCSRC = (1<<URSEL)|(1<<UCSZ1)|(1<<UCSZ0);
+    UCSRC = (1<<UCSZ1)|(1<<UCSZ0);
 }
